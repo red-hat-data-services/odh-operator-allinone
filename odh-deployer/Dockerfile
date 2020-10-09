@@ -1,12 +1,18 @@
 FROM registry.access.redhat.com/ubi8/ubi-minimal
 
-COPY k8s.repo /etc/yum.repos.d/k8s.repo
+ENV HOME /root
+
 RUN microdnf update -y && \
     microdnf install -y \
       bash \
-      kubectl \
+      tar \
+      gzip \
     && microdnf clean all && \
     rm -rf /var/cache/yum
+
+ADD https://mirror.openshift.com/pub/openshift-v4/clients/oc/latest/linux/oc.tar.gz $HOME/ 
+RUN tar -C /usr/local/bin -xvf $HOME/oc.tar.gz && \
+    chmod +x /usr/local/bin/oc
 
 COPY deploy.sh /
 COPY opendatahub.yaml /
