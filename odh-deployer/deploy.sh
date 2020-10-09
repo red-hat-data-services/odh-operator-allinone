@@ -26,6 +26,7 @@ while [[ $retry -gt 0 ]]; do
   oc apply -n ${ODH_PROJECT} -f /opendatahub.yaml
   if [ $? -eq 0 ]; then
     retry=-1
+  else
     echo "Attempt to create the ODH CR failed.  This is expected during operator installation."
     echo "Attempts remaining: $retry"
   fi
