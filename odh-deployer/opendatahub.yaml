@@ -10,22 +10,11 @@ spec:
         name: manifests
         path: odh-common
     name: odh-common
-  #Note: AI Library components requires seldon do be deployed first, make sure to place seldon before AIlibrary
   - kustomizeConfig:
       repoRef:
         name: manifests
         path: odhseldon/cluster
     name: odhseldon
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: radanalyticsio/spark/cluster
-    name: radanalyticsio-cluster
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: radanalyticsio/spark/operator
-    name: radanalyticsio-spark-operator
   - kustomizeConfig:
       parameters:
         - name: s3_endpoint_url
@@ -44,5 +33,5 @@ spec:
     name: notebook-images
   repos:
   - name: manifests
-    uri: https://github.com/opendatahub-io/odh-manifests/tarball/master
-  version: v0.8
+    uri: file:///opt/manifests/odh-manifests.tar.gz
+  version: v0.8.0
