@@ -64,7 +64,7 @@ spec:
         - name: registry_secret
           value: "modh-pusher-secret"
         - name: context_path
-          value: odh-deployer
+          value: odh-operator-image
         - name: dockerfile
           value: Dockerfile
       resources:
