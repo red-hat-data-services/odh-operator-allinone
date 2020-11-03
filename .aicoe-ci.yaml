@@ -1,2 +1,8 @@
 check:
-  - thoth-custom-build
+  - thoth-build
+build:
+  build-stratergy: "Dockerfile"
+  registry: "quay.io"
+  registry-org: "modh"
+  registry-project: "odh-operator-image"
+  registry-secret: "modh-pusher-secret"
