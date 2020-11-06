@@ -1,8 +1,8 @@
 ARG manifest_base=quay.io/modh/odh-manifests
-ARG manifest_ver=0.1.0
+ARG manifest_ver=1.0.0-experiment
 
 ARG operator_base=quay.io/modh/opendatahub-operator
-ARG operator_ver=0.1.0
+ARG operator_ver=1.0.0-experiment
 
 FROM ${manifest_base}:${manifest_ver} as manifests
 FROM ${operator_base}:${operator_ver}
