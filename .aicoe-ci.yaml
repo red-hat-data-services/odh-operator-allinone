@@ -4,5 +4,5 @@ build:
   build-stratergy: "Dockerfile"
   registry: "quay.io"
   registry-org: "modh"
-  registry-project: "odh-operator-image"
+  registry-project: "odh-operator-image-deprecated"
   registry-secret: "modh-pusher-secret"
